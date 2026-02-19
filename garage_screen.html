@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nearby Stores - AutoParts App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#519eec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "success-light": "#d1fae5",
+                        "success-text": "#059669",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                        "card": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-white min-h-screen flex flex-col antialiased selection:bg-primary/30">
+<div class="w-full h-12 bg-transparent flex items-end justify-between px-6 pb-2 text-xs font-semibold dark:text-white z-50">
+<span>9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-icons text-[16px]">signal_cellular_alt</span>
+<span class="material-icons text-[16px]">wifi</span>
+<span class="material-icons text-[16px] rotate-90">battery_full</span>
+</div>
+</div>
+<main class="flex-1 px-4 pb-24 max-w-md mx-auto w-full">
+<header class="pt-4 pb-6 flex items-center justify-between">
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Nearby Stores</h1>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Find local auto parts near you.</p>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons-outlined text-slate-600 dark:text-slate-300">map</span>
+</button>
+</header>
+<div class="relative mb-8">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-icons text-slate-400">search</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-4 bg-white dark:bg-slate-800 border-none rounded-xl shadow-soft focus:ring-2 focus:ring-primary text-slate-900 dark:text-white placeholder-slate-400 text-base" placeholder="Search for local stores..." type="text"/>
+</div>
+<div class="space-y-4">
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-soft border border-transparent transition-all active:scale-[0.99]">
+<div class="flex gap-4 items-start mb-4">
+<div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg text-primary shrink-0">
+<span class="material-symbols-outlined text-3xl">storefront</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Downtown Auto Parts</h3>
+<span class="text-xs font-medium text-slate-400">1.2 miles away</span>
+</div>
+<p class="text-sm text-green-600 dark:text-green-400 font-medium mt-1">Open until 8 PM</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center">
+<span class="material-icons text-[12px] text-slate-400">local_shipping</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center">
+<span class="material-icons text-[12px] text-slate-400">verified</span>
+</div>
+</div>
+<button class="px-5 py-2 rounded-lg bg-primary text-white font-semibold text-sm transition-colors hover:bg-blue-600 active:scale-95">
+                    View Store
+                </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-soft border border-transparent transition-all active:scale-[0.99]">
+<div class="flex gap-4 items-start mb-4">
+<div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg text-slate-500 shrink-0">
+<span class="material-symbols-outlined text-3xl">build_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Northside Spares</h3>
+<span class="text-xs font-medium text-slate-400">2.5 miles away</span>
+</div>
+<p class="text-sm text-green-600 dark:text-green-400 font-medium mt-1">Open until 6 PM</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<div class="flex items-center gap-1">
+<span class="material-icons text-yellow-400 text-sm">star</span>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-300">4.8</span>
+<span class="text-[10px] text-slate-400">(120)</span>
+</div>
+<button class="px-5 py-2 rounded-lg border border-primary/30 text-primary font-semibold text-sm transition-colors hover:bg-primary/5 active:scale-95">
+                    View Store
+                </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-soft border border-transparent transition-all active:scale-[0.99]">
+<div class="flex gap-4 items-start mb-4">
+<div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg text-slate-500 shrink-0">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Elite Performance Hub</h3>
+<span class="text-xs font-medium text-slate-400">4.1 miles away</span>
+</div>
+<p class="text-sm text-green-600 dark:text-green-400 font-medium mt-1">Open until 9 PM</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-xs text-slate-400">Express Pickup Available</span>
+</div>
+<button class="px-5 py-2 rounded-lg border border-primary/30 text-primary font-semibold text-sm transition-colors hover:bg-primary/5 active:scale-95">
+                    View Store
+                </button>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-[#111921]/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 pb-5 pt-2 z-40">
+<div class="max-w-md mx-auto px-6 flex justify-between items-center">
+<a class="flex flex-col items-center justify-center w-16 gap-1 group" href="#">
+<span class="material-icons-outlined text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors text-2xl">home</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-16 gap-1 group" href="#">
+<span class="material-icons-outlined text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors text-2xl">search</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center w-16 gap-1" href="#">
+<div class="relative">
+<span class="material-icons text-primary transition-colors text-2xl">storefront</span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white dark:border-[#111921]"></span>
+</div>
+<span class="text-[10px] font-bold text-primary">Stores</span>
+</a>
+<a class="flex flex-col items-center justify-center w-16 gap-1 group" href="#">
+<span class="material-icons-outlined text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors text-2xl">shopping_bag</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center w-16 gap-1 group" href="#">
+<div class="w-6 h-6 rounded-full overflow-hidden bg-slate-200">
+<img alt="User Profile" class="w-full h-full object-cover opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoPjFZ0Y9Y1Bwrq2HI43i9o-8r5enEN7A5vdKRSRlzKd4gha8bY89inXcrEjKWhrHBcfqcJFeZvba_ld3WAiKsE1XDlYpDBLvasxDJbB5dfs7fBB-Uy6wz55TlQel3Y4kz9V317unw3NYcF_ILdry8a8BOrPUglRijiM8JunA6HAaYLmw45ZVoI-yL6LQxBUqeRvHnfvE1n7wsrxYrG0KqfJS-Ai9v8eF8yL6w61h2Uu18Fk9yjAFwFFqoWY5DWLlAvyx5xpftJS_O"/>
+</div>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300">Profile</span>
+</a>
+</div>
+</nav>
+
+</body></html>
