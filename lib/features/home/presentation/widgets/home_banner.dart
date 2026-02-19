@@ -17,7 +17,7 @@ class HomeBanner extends StatelessWidget {
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
-        ],
+        ], 
         image: const DecorationImage(
           image: AssetImage('assets/images/brake_disc.png'), // Placeholder for wheel
           fit: BoxFit.cover,
